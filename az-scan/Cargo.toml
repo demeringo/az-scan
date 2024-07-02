@@ -7,6 +7,8 @@ edition = "2021"
 azure_core = { version = "0.20", default-features = false, features = ["enable_reqwest_rustls"] }
 azure_identity = { version = "0.20", default-features = false, features = ["enable_reqwest_rustls"] }
 azure_mgmt_compute = { version = "0.20", default-features = false, features = ["default_tag", "enable_reqwest_rustls"] }
+azure_svc_monitor = { version = "0.20", default-features = false, features = ["default_tag", "enable_reqwest_rustls"] }
+
 futures = "0.3"
 tokio = { version = "1.23", features = ["macros", "rt-multi-thread"] }
 env_logger = "0.10"

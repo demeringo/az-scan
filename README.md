@@ -36,3 +36,9 @@ az login
 ```
 
 #### Env vars
+
+
+## References
+
+- Getting Metrics [Get Azure Virtual Machine usage data using the REST API - Azure Virtual Machines](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/metrics-vm-usage-rest)
+- VM usage metrics [Understanding Azure virtual machine usage - Azure Virtual Machines](https://learn.microsoft.com/en-us/azure/virtual-machines/vm-usage)

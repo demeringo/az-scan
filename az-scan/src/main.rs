@@ -1,4 +1,5 @@
 use azure_identity::AzureCliCredential;
+use azure_svc_monitor::models::ResourceIdList;
 use futures::stream::StreamExt;
 use std::sync::Arc;
 
@@ -43,6 +44,28 @@ async fn print_cpu_load(
     resourcegroup_name: &String,
     vm_name: &String,
 ) -> Result<(), Box<dyn std::error::Error>> {
+    let client = azure_svc_monitor::Client::builder(credential).build()?;
+
+    let metricnamespace = "ns".to_owned();
+
+    let mut metricnames: Vec<String> = Vec::new();
+    metricnames.push("Percentage CPU".to_owned());
+    // let metricnames ="Percentage CPU".to_owned();
+    //  let batch_request = "br";
+    //let interval: "i";
+
+    let mut res_ids: Vec<String> = Vec::new();
+    res_ids.push("abc".to_owned());
+
+    let mut batch_request: ResourceIdList = ResourceIdList {
+        resourceids: res_ids,
+    };
+
+    client
+        .metrics_batch_client()
+        .batch(subscription_id, metricnamespace, metricnames, batch_request)
+        .await?;
+
     Ok(())
 }
 
