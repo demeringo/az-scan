@@ -2,6 +2,7 @@
 
 Experimenting with Azure APIs to retrieve resources information
 
+Objective is to port back the code to [Boavizta cloud-scanner](https://github.com/Boavizta/cloud-scanner) when it is ready.
 
 
 ## Usage
